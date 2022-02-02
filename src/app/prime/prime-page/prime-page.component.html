@@ -1,0 +1,45 @@
+<nb-layout>
+    <nb-layout-column>
+        <div class="container-xl bg d-flex flex-column" style="height: 100% !important;">
+            <div class="flex-grow-0" >
+                <div class="d-flex justify-content-end mb-2">
+                    <nb-icon class="fs-6" icon="close-outline" status="basic"></nb-icon>
+                </div>
+                <div class="px-5 pt-1 pi">
+                    <div class="mb-3">
+                        <div class="mx-auto" style="max-width: fit-content;">
+                            <h5 class="text-white fw-bolder" style="font-size: calc(0.5vw + 20px);">Introduction</h5>
+                        </div>
+                        <div class="mx-auto" style="max-width: fit-content;">
+                            <h5 class="text-white fw-bolder" style="font-size: calc(0.5vw + 20px);"> TamilMatrimony <span class="fw-bold">PRIME</span></h5>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="text-white fw-bolder" style="font-size: calc(0.5vw + 15px);">With <span>PRIME</span>, you get:</h5>
+                    </div>
+                    <div class="mb-2">
+                        <ul class="mb-4 p-0">
+                            <li class="text-white fw-bolder mb-3" style="font-size: calc(0.2vw + 14px);">100% ID verified, high-quality profiles</li>
+                            <li class="text-white fw-bolder mb-3" style="font-size: calc(0.2vw + 14px);">Matches with photos and complete information</li>
+                            <li class="text-white fw-bolder mb-3" style="font-size: calc(0.2vw + 14px);">The finest and most trustworthy profiles to choose from</li>
+                        </ul>
+                    </div>
+                    <div class="text-end mb-2">
+                        *Patent Pending
+                    </div>
+                </div>
+            </div>
+            <div class="flex-grow-1"> 
+                <div class="border h-100 px-5 pt-5 bg-white text-dark pi pt">
+                    <h5 class="fw-light mb-4" style="font-size: calc(0.2vw + 16px);"> Be a part of <span class="fw-bold fc">PRIME</span> for free with these simple steps</h5>
+                    <h5 class="fw-bold" style="font-size: calc(0.2vw + 16px);">Add your photo to join the exclusive club</h5>
+                    <button class="mb-4" shape="round" nbButton status="warning" (click)="myfile.click()">Upload Photo</button>
+                    <input style="display: none;" type="file" #myfile name="myfile">
+                    <h5 class="fw-bold mb-2" style="font-size: calc(0.2vw + 16px);">Get your profile verified with  an ID proof</h5>
+                    <button  shape="round" nbButton status="warning" (click)="myUpload.click()">Verify Your Profile</button>
+                    <input style="display: none;" type="file" #myUpload name="myUpload">
+                </div>
+            </div>
+        </div>
+    </nb-layout-column>
+</nb-layout>

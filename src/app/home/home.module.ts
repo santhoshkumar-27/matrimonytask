@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PrimePageRoutingModule } from './prime-page-routing.module';
-import { PrimePageComponent } from './prime-page.component';
+import { HomeRoutingModule } from './home-routing.module';
 import { NbButtonModule, NbCardModule, NbIconModule, NbLayoutModule, NbTooltipModule } from '@nebular/theme';
+import { IndexComponent } from './index/index.component';
 
 
 @NgModule({
   declarations: [
-    PrimePageComponent
+    IndexComponent
   ],
   imports: [
     CommonModule,
-    PrimePageRoutingModule,
+    HomeRoutingModule,
     NbLayoutModule,
     NbIconModule,
     NbCardModule,
@@ -20,4 +20,4 @@ import { NbButtonModule, NbCardModule, NbIconModule, NbLayoutModule, NbTooltipMo
     NbTooltipModule,
   ]
 })
-export class PrimePageModule { }
+export class HomeModule { }

@@ -1,0 +1,53 @@
+$c: #5e4378;
+:host ::ng-deep{
+    nb-layout-column {
+        padding: 0px !important;
+        background: linear-gradient(
+            92deg
+            , #55b970, #2ab2b2) !important;
+    }
+}
+.fc{
+    color: $c !important;
+}
+
+.prime {
+    background: white;
+    height: fit-content;
+    width: fit-content;
+    padding-inline: 2.2rem !important;
+    padding-block: 0.7rem !important;
+    border-radius: 1rem !important;
+
+    & {
+        top: 39px;
+        left: -2px;
+    }
+}
+.regular {
+    background: #228f8c;
+    height: fit-content;
+    width: fit-content;
+    padding-inline: 2.2rem !important;
+    padding-block: 1rem !important;
+    border-radius: 1.5rem !important;
+
+    & {
+        top: 33px;
+        left: -131px;
+        z-index: 100;
+    }
+}
+@media (max-width: 768px){
+    .regular{
+        top: 26px;
+        left: -131px;
+    }
+    .prime {
+        top: 31px;
+        left: -2px
+    }
+}
+.pointer{
+    cursor: pointer !important;
+}

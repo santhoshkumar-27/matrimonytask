@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prime-page',
   templateUrl: './prime-page.component.html',
   styleUrls: ['./prime-page.component.scss']
 })
-
-// interface Person {
-//   name: string;
-//   age: number;
-// }
 export class PrimePageComponent implements OnInit {
-  // primeList: string[] = {}
-  constructor() { }
+
+  constructor(
+    protected router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  backToRegular() {
+    this.router.navigate([''])
+  }
 }

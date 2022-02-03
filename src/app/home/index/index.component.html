@@ -1,0 +1,20 @@
+<nb-layout>
+    <nb-layout-column>
+        <div class="container-xl">
+            <div class="mx-auto pt-5 position-relative" style="max-width: max-content;">
+                <!-- <button>Regular</button> -->
+                <!-- <button>P</button> -->
+                <span class="position-absolute d-inline-block text-white regular border border-white fs-4">Regular</span>
+                <span (click)="goToPrime()"  class="pointer position-absolute d-inline-block fw-bold fc prime fs-4">PRIME</span>
+            </div>
+            <div class="pt-5">
+                <div class="mx-auto pt-5" style="width: max-content;">
+                    <button style="width:min-content;" class="me-2">All Matches</button>
+                    <button style="width:min-content;" class="me-2">New Matches</button>
+                    <button style="width:min-content;" class="me-2">Premium Matches</button>
+                    <button style="width:min-content;" class="me-2">Mutual Matches</button>
+                </div>
+            </div>
+        </div>
+    </nb-layout-column>
+</nb-layout>

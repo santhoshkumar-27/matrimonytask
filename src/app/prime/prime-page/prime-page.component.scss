@@ -46,7 +46,9 @@ $c: #5e4378;
 .fc{
     color: $c !important;
 }
-
+.pointer{
+    cursor: pointer !important;
+}
 
 @media (max-width: 600px){
     .pi{

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PrimePageComponent } from './prime-page/prime-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./prime-page/prime-page.module').then(m => m.PrimePageModule)
+    component: PrimePageComponent
   }
 ];
 

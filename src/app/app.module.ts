@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -21,8 +21,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NbEvaIconsModule,
     NgbModule,
     NbLayoutModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

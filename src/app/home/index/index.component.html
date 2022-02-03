@@ -1,5 +1,5 @@
 <nb-layout>
-    <nb-layout-column>
+    <nb-layout-column [nbSpinner]="loading" nbSpinnerStatus="success"  nbSpinnerSize="medium">
         <div class="container-xl container-lg container-md container-sm">
             <div class="d-flex flex-column">
                 <div class="flex-grow-0">
@@ -10,27 +10,27 @@
                     <div class="pt-5 overflow-auto">
                         <div class="mx-auto mc pt-3 d-flex">
                             <div  class="me-2">
-                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">All Matches</button>
+                                <button  style="width: min-content;"[ngClass]="activeTab ==='allmatches' ? 'activetab' : ''" (click)="allMatchList('allmatches')" class="btn text-white fw-bolder br px-3 py-2">All Matches</button>
                             </div>
                             <div  class="me-2">
-                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">New Matches</button>
+                                <button style="width: min-content;"[ngClass]="activeTab ==='newmatches' ? 'activetab' : ''" (click)="newMatches('newmatches')" class="btn text-white fw-bolder br px-3 py-2">New Matches</button>
                             </div>
                             <div  class="me-2">
-                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">Premium Matches</button>
+                                <button style="width: min-content;"[ngClass]="activeTab ==='premiummatches' ? 'activetab' : ''" (click)="premiumMatches('premiummatches')" class="btn text-white fw-bolder br px-3 py-2">Premium Matches</button>
                             </div>
                             <div  class="me-2">
-                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">Mutual Matches</button>
+                                <button style="width: min-content;"[ngClass]="activeTab ==='mutualmatches' ? 'activetab' : ''" (click)="mutualMatches('mutualmatches')" class="btn text-white fw-bolder br px-3 py-2">Mutual Matches</button>
                             </div>
                         </div>
                     </div>
                     <hr class="text-white">
                     <div>
                         <div class="mx-auto" style="max-width: max-content;">
-                            <h5 class="text-white fw-bolder" style="font-size: calc(0.5vw + 20px);">2487, Matches based on your perferencs</h5>
+                            <h5 class="text-white fw-bolder" style="font-size: calc(0.5vw + 20px);">{{match}},  Matches based on your perferencs</h5>
                         </div>
                         <div class="mb-2" style="max-width: max-content;">
-                            <button class="btn text-white fw-bolder me-3 br-2 px-3 py-2">1852 Yet to view</button>
-                            <button class="btn text-white fw-bolder br-2 px-3 py-2">635 viewed</button>
+                            <button class="btn text-white fw-bolder me-3 br-2 px-3 py-2">{{yetToView}} Yet to view</button>
+                            <button class="btn text-white fw-bolder br-2 px-3 py-2">{{viewed}} viewed</button>
                         </div>
                     </div>
                 </div>
@@ -53,11 +53,11 @@
                         </div>
                         <div>
                             <div class="row">
-                                <div class="col-12 pt-3 pb-2 bb" *ngFor= "let user of userList">
+                                <div class="col-md-6 pt-3 pb-2 bb" *ngFor= "let user of userList; index as i">
                                     <div class="d-flex mb-2">
                                         <div class="me-2">
                                             <div style="width: inherit;" class="position-relative">
-                                                <img class="img br d-block" style="object-fit: cover;" [src]="user.imageUrl" alt="">
+                                                <img class="img br d-block" style="object-fit: cover;" src="https://picsum.photos/200/200?image={{user.id + imgCount}}" alt="">
                                                 <div class="bg-rotate img"></div>
                                             </div>
                                         </div>
@@ -75,9 +75,9 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h5 class="text-dark fw-bolder" style="font-size: calc(0.5vw + 16px);">{{user.name}}</h5>
-                                                <h5 class="text-dark fw-light" style="font-size: calc(0.5vw + 10px);">{{user.age}}, {{user.height}}, {{user.educate}}, {{user.caste}}</h5>
-                                                <h5 class="text-dark fw-light" style="font-size: calc(0.5vw + 10px);">{{user.state}}, {{user.country}}</h5>
+                                                <h5 class="text-dark fw-bolder" style="font-size: calc(0.5vw + 16px);">{{user.name | titlecase}}</h5>
+                                                <h5 class="text-dark fw-light" style="font-size: calc(0.5vw + 10px);">{{user.age}}, {{user.height}}, {{user.education | uppercase }}, {{user.caste | titlecase}}</h5>
+                                                <h5 class="text-dark fw-light" style="font-size: calc(0.5vw + 10px);">{{user.state | titlecase }}, {{user.country | titlecase }}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class=" bottomfix onlymobile">
+                <div *ngIf="!footerHide" class=" bottomfix onlymobile">
                     <div class="d-flex justify-content-around">
                         <div class="d-flex flex-column align-items-center justify-content-between pt-2">
                             <nb-icon icon="home-outline"></nb-icon>

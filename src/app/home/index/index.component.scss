@@ -91,9 +91,6 @@ $c: #5e4378;
   position: absolute;
   background: #54b972;
   border-radius: 10px !important;
-//   border-radius: 15px;
-//   border-bottom-left-radius: 5px;
-//   border-bottom-right-radius: 5px;
   top: 0px;
   z-index: -1;
   left: 10px;
@@ -148,4 +145,8 @@ $c: #5e4378;
 }
 .bb{
     border-bottom: 1px solid rgb(247, 245, 245);
+}
+.activetab{
+    background: #269376;
+    border-color: #269376 !important;
 }

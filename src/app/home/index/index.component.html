@@ -1,18 +1,137 @@
 <nb-layout>
     <nb-layout-column>
-        <div class="container-xl">
-            <div class="mx-auto pt-5 position-relative" style="max-width: max-content;">
-                <!-- <button>Regular</button> -->
-                <!-- <button>P</button> -->
-                <span class="position-absolute d-inline-block text-white regular border border-white fs-4">Regular</span>
-                <span (click)="goToPrime()"  class="pointer position-absolute d-inline-block fw-bold fc prime fs-4">PRIME</span>
-            </div>
-            <div class="pt-5">
-                <div class="mx-auto pt-5" style="width: max-content;">
-                    <button style="width:min-content;" class="me-2">All Matches</button>
-                    <button style="width:min-content;" class="me-2">New Matches</button>
-                    <button style="width:min-content;" class="me-2">Premium Matches</button>
-                    <button style="width:min-content;" class="me-2">Mutual Matches</button>
+        <div class="container-xl container-lg container-md container-sm">
+            <div class="d-flex flex-column">
+                <div class="flex-grow-0">
+                    <div class="mx-auto pt-5 position-relative" style="max-width: max-content;">
+                        <span class="position-absolute d-inline-block text-white regular border border-white fs-4">Regular</span>
+                        <span (click)="goToPrime()"  class="pointer position-absolute d-inline-block fw-bold fc prime fs-4">PRIME</span>
+                    </div>
+                    <div class="pt-5 overflow-auto">
+                        <div class="mx-auto mc pt-3 d-flex">
+                            <div  class="me-2">
+                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">All Matches</button>
+                            </div>
+                            <div  class="me-2">
+                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">New Matches</button>
+                            </div>
+                            <div  class="me-2">
+                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">Premium Matches</button>
+                            </div>
+                            <div  class="me-2">
+                                <button style="width: min-content;" class="btn text-white fw-bolder br px-3 py-2">Mutual Matches</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="text-white">
+                    <div>
+                        <div class="mx-auto" style="max-width: max-content;">
+                            <h5 class="text-white fw-bolder" style="font-size: calc(0.5vw + 20px);">2487, Matches based on your perferencs</h5>
+                        </div>
+                        <div class="mb-2" style="max-width: max-content;">
+                            <button class="btn text-white fw-bolder me-3 br-2 px-3 py-2">1852 Yet to view</button>
+                            <button class="btn text-white fw-bolder br-2 px-3 py-2">635 viewed</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-grow-1 h-100">
+                    <div class="border h-100 px-4 pt-2 bg-white text-dark pi pt">
+                        <div class="scrollfix bg-white">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h5 class="text-dark fw-bolder" style="font-size: calc(0.5vw + 16px);">Matches, Yet to View</h5>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <nb-icon class="me-2" icon="funnel-outline"></nb-icon>
+                                    <nb-icon icon="settings-outline"></nb-icon>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-start">
+                                <nb-icon class="me-2" icon="alert-circle-outline"></nb-icon>
+                                <p class="text-dark fw-bold" style="font-size: calc(0.5vw + 8px);">Only premium members can view full names</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-12 pt-3 pb-2 bb" *ngFor= "let user of userList">
+                                    <div class="d-flex mb-2">
+                                        <div class="me-2">
+                                            <div style="width: inherit;" class="position-relative">
+                                                <img class="img br d-block" style="object-fit: cover;" [src]="user.imageUrl" alt="">
+                                                <div class="bg-rotate img"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex flex-column mb-1">
+                                                <div class="d-flex flex-row me-2">
+                                                    <div class="d-flex flex-row align-items verify me-1">
+                                                        <nb-icon icon="checkmark-circle-2-outline" class="me-1"></nb-icon>
+                                                        <p class="verify fw-light mb-0" style="font-size: calc(0.5vw + 10px);">verified</p>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items premium">
+                                                        <nb-icon icon="person-done-outline" class="me-1"></nb-icon>
+                                                        <p class="premium fw-light mb-0" style="font-size: calc(0.5vw + 10px);">premium</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <h5 class="text-dark fw-bolder" style="font-size: calc(0.5vw + 16px);">{{user.name}}</h5>
+                                                <h5 class="text-dark fw-light" style="font-size: calc(0.5vw + 10px);">{{user.age}}, {{user.height}}, {{user.educate}}, {{user.caste}}</h5>
+                                                <h5 class="text-dark fw-light" style="font-size: calc(0.5vw + 10px);">{{user.state}}, {{user.country}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="d-flex flex-row justify-content-between mb-2">
+                                            <div  class="d-flex flex-row align-items-center">
+                                                <img src="../../../assets/whatsapp.png" class="me-2 fit-image" alt="whatsapp">
+                                                <p class="text-dark fw-bold m-0" style="font-size: calc(0.5vw + 8px);">whatsapp</p>
+                                            </div>
+                                            <div class="vl"></div>
+                                            <div  class="d-flex flex-row align-items-center">
+                                                <nb-icon icon="eye-off-outline" class="me-1"></nb-icon>
+                                                <p class="text-dark fw-bold m-0" style="font-size: calc(0.5vw + 8px);">Don't Show</p>
+                                            </div>
+                                            <div class="vl"></div>
+                                            <div  class="d-flex flex-row align-items-center">
+                                                <nb-icon icon="star-outline" class="me-1"></nb-icon>
+                                                <p class="text-dark fw-bold m-0" style="font-size: calc(0.5vw + 8px);">Shortlist</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-end align-items-center">
+                                            <p class="text-dark fw-bold me-2 mb-0" style="font-size: calc(0.5vw + 8px);">Like Her profile?</p>
+                                            <p class="text-dark fw-bold me-2 mb-0" style="font-size: calc(0.5vw + 8px);">connect</p>
+                                            <button nbButton shape="round" style="width:44px; height: 16px;"status="warning"><nb-icon icon="checkmark-outline"></nb-icon></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" bottomfix onlymobile">
+                    <div class="d-flex justify-content-around">
+                        <div class="d-flex flex-column align-items-center justify-content-between pt-2">
+                            <nb-icon icon="home-outline"></nb-icon>
+                            <p class="text-dark fw-bold" style="font-size: calc(0.5vw + 8px);">Home</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center text-success justify-content-between pt-2">
+                            <nb-icon icon="person-outline"></nb-icon>
+                            <p class="text-success fw-bold" style="font-size: calc(0.5vw + 8px);">Matches</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-between pt-2">
+                            <nb-icon icon="email-outline"></nb-icon>
+                            <p class="text-dark fw-bold" style="font-size: calc(0.5vw + 8px);">Mailbox</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-between pt-2">
+                            <nb-icon icon="bell-outline"></nb-icon>
+                            <p class="text-dark fw-bold" style="font-size: calc(0.5vw + 8px);">Notification</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-between pt-2">
+                            <nb-icon icon="search-outline"></nb-icon>
+                            <p class="text-dark fw-bold" style="font-size: calc(0.5vw + 8px);">search</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

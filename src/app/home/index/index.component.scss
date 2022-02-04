@@ -86,15 +86,23 @@ $c: #5e4378;
         width: 92px;
         height: 85px;
     }
+    .img1{
+        width: 84px !important;
+        height: 78px !important;
+    }
+    .bg-rot {
+        top: 2px  !important;
+        left: 17px !important;
+    }
 }
-.bg-rotate {
+.bg-rot {
   position: absolute;
   background: #54b972;
   border-radius: 10px !important;
-  top: 0px;
-  z-index: -1;
-  left: 10px;
-  transform: rotate(85deg);
+  top: -3px;
+  z-index: 0;
+  left: 8px;
+  transform: rotate(87deg);
 }
 .verify{
     color: #787fa3 !important;

@@ -125,12 +125,14 @@ $c: #5e4378;
     }
 }
 .scrollfix{
-    padding-top: 1rem;
     position: sticky !important;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
+    background: linear-gradient(
+            92deg
+            , #55b970, #2ab2b2) !important;
 }
 .bottomfix {
     position: fixed !important;
@@ -157,4 +159,7 @@ $c: #5e4378;
 .activetab{
     background: #269376;
     border-color: #269376 !important;
+}
+.paddingremove {
+    padding-top: 0px !important;
 }

@@ -18,6 +18,7 @@ export class IndexComponent implements OnInit {
   activeTab !: string;
   footerHide!: boolean;
   loading !: boolean;
+  paddingHide !: boolean;
   constructor(
     private router: Router,
     private http: HttpClient
@@ -31,6 +32,11 @@ export class IndexComponent implements OnInit {
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event: any) {
    const Scroll = event.target.scrollingElement.scrollTop;
+   if(Scroll > 78) {
+     this.paddingHide = true;
+   }else {
+     this.paddingHide = false;
+   }
    if(Scroll > 200) {
      this.footerHide = true;
    } else {
